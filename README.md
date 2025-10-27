@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my experience as a Frontend Developer, Motion Designer, and Indie Game Developer.
 
-## 🚀 Live Site
+## �🚀 Live Site
 
 Visit the live portfolio at: [https://lennyk.dev/](https://lennyk.dev/)
 
@@ -34,8 +34,8 @@ Visit the live portfolio at: [https://lennyk.dev/](https://lennyk.dev/)
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
-cd portfolio
+git clone https://github.com/lenniezelk/portfolio-2.git
+cd portfolio-2
 ```
 
 2. Install dependencies
