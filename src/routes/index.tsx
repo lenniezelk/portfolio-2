@@ -1,9 +1,25 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { BookOpen, FileText, Plus } from 'lucide-react'
+import HomeProject from '@/components/HomeProject'
+import { listProjects } from '@/projects'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { createServerFn } from '@tanstack/react-start'
+import { BookOpen, FileText } from 'lucide-react'
 
-export const Route = createFileRoute('/')({ component: App })
+const fetchInitialData = createServerFn({ method: 'GET' }).handler(async () => {
+  return {
+    projects: listProjects()
+  }
+})
+
+export const Route = createFileRoute('/')({
+  component: App,
+  loader: () => fetchInitialData(),
+})
+
+
 
 function App() {
+  const { projects } = Route.useLoaderData();
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       {/* Header */}
@@ -24,7 +40,7 @@ function App() {
         {/* About Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
-          <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-xl shadow-2xl p-8 border border-slate-700/50">
+          <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-sm shadow-2xl p-8 border border-slate-700/50">
             <p className="text-lg text-slate-300 leading-relaxed">
               I am a senior frontend engineer with over 12+ years of experience in building commercial web applications with
               Typescript and React leveraging modern tools like Vite, TailwindCSS, Tanstack Router and Tanstack Start. I am also a
@@ -40,13 +56,13 @@ function App() {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Blog Link */}
             <a
-              href="https://hashnode.com/@lkioi"
+              href="https://lkioi.hashnode.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm rounded-xl shadow-xl p-6 hover:shadow-2xl hover:from-blue-500/30 hover:to-purple-600/30 transition-all duration-300 border border-blue-500/30 hover:border-blue-400/50"
+              className="group bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm rounded-sm shadow-xl p-6 hover:shadow-2xl hover:from-blue-500/30 hover:to-purple-600/30 transition-all duration-300 border border-blue-500/30 hover:border-blue-400/50"
             >
               <div className="flex items-center mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-sm flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white">My Blog</h3>
@@ -65,10 +81,10 @@ function App() {
               href="/LeonardKinyanjui.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gradient-to-br from-emerald-500/20 to-cyan-600/20 backdrop-blur-sm rounded-xl shadow-xl p-6 hover:shadow-2xl hover:from-emerald-500/30 hover:to-cyan-600/30 transition-all duration-300 border border-emerald-500/30 hover:border-emerald-400/50"
+              className="group bg-gradient-to-br from-emerald-500/20 to-cyan-600/20 backdrop-blur-sm rounded-sm shadow-xl p-6 hover:shadow-2xl hover:from-emerald-500/30 hover:to-cyan-600/30 transition-all duration-300 border border-emerald-500/30 hover:border-emerald-400/50"
             >
               <div className="flex items-center mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-sm flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                   <FileText className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white">Resume</h3>
@@ -87,24 +103,17 @@ function App() {
         {/* Projects Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">Projects</h2>
-          <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-xl shadow-2xl p-8 border border-slate-700/50">
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
-                <Plus className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Projects Coming Soon</h3>
-              <p className="text-slate-300">
-                I'm currently working on some exciting projects that I'll be showcasing here.
-                Stay tuned for updates!
-              </p>
-            </div>
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <HomeProject key={project.id} project={project} />
+            ))}
           </div>
         </section>
 
         {/* Contact Section */}
         <section>
           <h2 className="text-3xl font-bold text-white mb-6">Get In Touch</h2>
-          <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-xl shadow-2xl p-8 border border-slate-700/50">
+          <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-sm shadow-2xl p-8 border border-slate-700/50">
             <p className="text-lg text-slate-300 text-center">
               I'm always interested in new opportunities and collaborations.
               Feel free to reach out if you'd like to connect at leonardkioi370[at]gmail.com.
