@@ -42,7 +42,7 @@ function App() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
           <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-sm shadow-2xl p-8 border border-slate-700/50">
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               {/* Rive Animation Placeholder */}
               <div className="w-32 h-32 bg-gradient-to-br from-slate-600/30 to-gray-700/30 rounded-sm flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
                 <div className="text-slate-400 text-xs text-center">
