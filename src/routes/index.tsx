@@ -1,8 +1,8 @@
 import HomeProject from '@/components/HomeProject'
 import { listProjects } from '@/projects'
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-import { BookOpen, FileText } from 'lucide-react'
+import { BookOpen, FileText, Twitter, Linkedin, Github, Mail } from 'lucide-react'
 
 const fetchInitialData = createServerFn({ method: 'GET' }).handler(async () => {
   return {
@@ -114,10 +114,51 @@ function App() {
         <section>
           <h2 className="text-3xl font-bold text-white mb-6">Get In Touch</h2>
           <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-sm shadow-2xl p-8 border border-slate-700/50">
-            <p className="text-lg text-slate-300 text-center">
+            <p className="text-lg text-slate-300 text-center mb-8">
               I'm always interested in new opportunities and collaborations.
-              Feel free to reach out if you'd like to connect at leonardkioi370[at]gmail.com.
+              Feel free to reach out if you'd like to connect using the links below.
             </p>
+
+            {/* Social Media Links */}
+            <div className="flex justify-center space-x-6">
+              <a
+                href="mailto:leonardkioi370@gmail.com"
+                className="group flex items-center justify-center w-12 h-12 bg-gradient-to-br from-red-500/20 to-red-700/20 hover:from-red-500/30 hover:to-red-700/30 border border-red-500/30 hover:border-red-400/50 rounded-sm transition-all duration-300 hover:scale-110"
+                aria-label="Send me an email"
+              >
+                <Mail className="w-5 h-5 text-red-400 group-hover:text-red-300 transition-colors" />
+              </a>
+
+              <a
+                href="https://x.com/lk_kioi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-400/20 to-blue-600/20 hover:from-blue-400/30 hover:to-blue-600/30 border border-blue-500/30 hover:border-blue-400/50 rounded-sm transition-all duration-300 hover:scale-110"
+                aria-label="Follow me on Twitter"
+              >
+                <Twitter className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/leonard-kioi-b6954841/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-600/30 hover:border-blue-500/50 rounded-sm transition-all duration-300 hover:scale-110"
+                aria-label="Connect with me on LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-blue-500 group-hover:text-blue-400 transition-colors" />
+              </a>
+
+              <a
+                href="https://github.com/lenniezelk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center w-12 h-12 bg-gradient-to-br from-gray-600/20 to-gray-800/20 hover:from-gray-600/30 hover:to-gray-800/30 border border-gray-600/30 hover:border-gray-500/50 rounded-sm transition-all duration-300 hover:scale-110"
+                aria-label="Check out my GitHub profile"
+              >
+                <Github className="w-5 h-5 text-gray-400 group-hover:text-gray-300 transition-colors" />
+              </a>
+            </div>
           </div>
         </section>
       </main>
