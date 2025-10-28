@@ -7,6 +7,8 @@ export interface Project {
     techUsed: string[];
     longDescription: string;
     riveArtboard?: string;
+    prodLink?: string;
+    repoLink?: string;
 }
 
 export const projects: Project[] = [
@@ -16,8 +18,10 @@ export const projects: Project[] = [
         slug: "linkhub",
         tagline: "Your Ultimate Link Management Solution",
         description: "Simplify, organize, and share your links with ease using LinkHub's powerful features.",
-        techUsed: ["React", "TypeScript", "TailwindCSS", "Node.js", "Cloudflare Workers", "D1 Database"],
+        techUsed: ["Tanstack Start", "React", "TypeScript", "TailwindCSS", "Node.js", "Cloudflare Workers", "D1 Database"],
         longDescription: `Linkhub is a comprehensive link management platform designed to help users organize, shorten, and share their links efficiently. Built with a modern tech stack including React, TypeScript, and TailwindCSS for the frontend, and Node.js with Cloudflare Workers and D1 Database for the backend, Linkhub offers a seamless user experience.`,
+        prodLink: "https://linkhub-2-production.lkioi.workers.dev/",
+        repoLink: "https://github.com/lenniezelk/linkhub",
     },
 ];
 
