@@ -1,8 +1,9 @@
 import HomeProject from '@/components/HomeProject'
+import RiveAnimation from '@/components/RiveAnimation'
 import { listProjects } from '@/projects'
 import { createFileRoute } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-import { BookOpen, FileText, Twitter, Linkedin, Github, Mail } from 'lucide-react'
+import { Twitter, Linkedin, Github, Mail } from 'lucide-react'
 
 const fetchInitialData = createServerFn({ method: 'GET' }).handler(async () => {
   return {
@@ -61,18 +62,25 @@ function App() {
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm rounded-sm shadow-xl p-6 hover:shadow-2xl hover:from-blue-500/30 hover:to-purple-600/30 transition-all duration-300 border border-blue-500/30 hover:border-blue-400/50"
             >
-              <div className="flex items-center mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-sm flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <BookOpen className="w-6 h-6 text-white" />
+              <div className="flex items-start gap-4">
+                {/* Rive Animation Placeholder */}
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-500/30 to-purple-600/30 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <RiveAnimation artboardName='blog' />
                 </div>
-                <h3 className="text-xl font-semibold text-white">My Blog</h3>
-              </div>
-              <p className="text-slate-300 mb-4">
-                Check out my latest articles and tech insights on Hashnode. I write about
-                software development, best practices, and emerging technologies.
-              </p>
-              <div className="text-blue-400 font-medium group-hover:text-blue-300 transition-colors">
-                Visit Blog →
+
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="mb-3">
+                    <h3 className="text-xl font-semibold text-white">My Blog</h3>
+                  </div>
+                  <p className="text-slate-300 mb-4">
+                    Check out my latest articles and tech insights on Hashnode. I write about
+                    software development, best practices, and emerging technologies.
+                  </p>
+                  <div className="text-blue-400 font-medium group-hover:text-blue-300 transition-colors">
+                    Visit Blog →
+                  </div>
+                </div>
               </div>
             </a>
 
@@ -83,18 +91,28 @@ function App() {
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-emerald-500/20 to-cyan-600/20 backdrop-blur-sm rounded-sm shadow-xl p-6 hover:shadow-2xl hover:from-emerald-500/30 hover:to-cyan-600/30 transition-all duration-300 border border-emerald-500/30 hover:border-emerald-400/50"
             >
-              <div className="flex items-center mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-sm flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="w-6 h-6 text-white" />
+              <div className="flex items-start gap-4">
+                {/* Rive Animation Placeholder */}
+                <div className="w-24 h-24 bg-gradient-to-br from-emerald-500/30 to-cyan-600/30 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <div className="text-emerald-300 text-xs text-center">
+                    <div>Resume</div>
+                    <div>Animation</div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white">Resume</h3>
-              </div>
-              <p className="text-slate-300 mb-4">
-                Download my resume to learn more about my professional experience,
-                skills, and educational background.
-              </p>
-              <div className="text-emerald-400 font-medium group-hover:text-emerald-300 transition-colors">
-                Download PDF →
+
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="mb-3">
+                    <h3 className="text-xl font-semibold text-white">Resume</h3>
+                  </div>
+                  <p className="text-slate-300 mb-4">
+                    Download my resume to learn more about my professional experience,
+                    skills, and educational background.
+                  </p>
+                  <div className="text-emerald-400 font-medium group-hover:text-emerald-300 transition-colors">
+                    Download PDF →
+                  </div>
+                </div>
               </div>
             </a>
           </div>
