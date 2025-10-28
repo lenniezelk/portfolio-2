@@ -31,7 +31,7 @@ function App() {
               Leonard Kinyanjui
             </h1>
             <h2 className="text-xl text-slate-300 mb-2">Frontend Dev • Motion Designer • Indie Game Dev</h2>
-            <h3 className="text-lg text-slate-400">Typescript • React • After Effects • Rive • Defold</h3>
+            <h3 className="text-lg text-slate-400">Typescript • React • Rive • Defold</h3>
           </div>
         </div>
       </header>
@@ -56,7 +56,7 @@ function App() {
                 <p className="text-lg text-slate-300 leading-relaxed">
                   I am a senior frontend engineer with over 12+ years of experience in building commercial web applications with
                   Typescript and React leveraging modern tools like Vite, TailwindCSS, Tanstack Router and Tanstack Start. I am also a
-                  motion designer skilled in Adobe After Effects and Rive, creating engaging animations for web and mobile apps. Additionally, I am an indie game developer using the Defold engine to create unique gaming experiences. I am passionate
+                  motion designer skilled in Rive, creating engaging animations for web and mobile apps. Additionally, I am an indie game developer using the Defold engine to create unique gaming experiences. I am passionate
                   about crafting high-quality user experiences through code and design.
                 </p>
               </div>
