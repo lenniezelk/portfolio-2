@@ -42,25 +42,12 @@ function App() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
           <div className="bg-gradient-to-r from-slate-800/80 to-gray-800/80 backdrop-blur-sm rounded-sm shadow-2xl p-8 border border-slate-700/50">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Rive Animation Placeholder */}
-              <div className="w-32 h-32 bg-gradient-to-br from-slate-600/30 to-gray-700/30 rounded-sm flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-                <div className="text-slate-400 text-xs text-center">
-                  <div>About</div>
-                  <div>Animation</div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1">
-                <p className="text-lg text-slate-300 leading-relaxed">
-                  I am a senior frontend engineer with over 12+ years of experience in building commercial web applications with
-                  Typescript and React leveraging modern tools like Vite, TailwindCSS, Tanstack Router and Tanstack Start. I am also a
-                  motion designer skilled in Rive, creating engaging animations for web and mobile apps. Additionally, I am an indie game developer using the Defold engine to create unique gaming experiences. I am passionate
-                  about crafting high-quality user experiences through code and design.
-                </p>
-              </div>
-            </div>
+            <p className="text-lg text-slate-300 leading-relaxed">
+              I am a senior frontend engineer with over 12+ years of experience in building commercial web applications with
+              Typescript and React leveraging modern tools like Vite, TailwindCSS, Tanstack Router and Tanstack Start. I am also a
+              motion designer skilled in Rive, creating engaging animations for web and mobile apps. Additionally, I am an indie game developer using the Defold engine to create unique gaming experiences. I am passionate
+              about crafting high-quality user experiences through code and design.
+            </p>
           </div>
         </section>
 
